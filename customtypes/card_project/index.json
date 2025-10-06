@@ -1,0 +1,115 @@
+{
+  "format": "custom",
+  "id": "card_project",
+  "label": "Card Project",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "project_title": {
+        "type": "Text",
+        "config": {
+          "label": "Project Title",
+          "placeholder": ""
+        }
+      },
+      "project_image": {
+        "type": "Image",
+        "config": {
+          "label": "Project Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "start_date": {
+        "type": "Date",
+        "config": {
+          "label": "Start Date",
+          "placeholder": ""
+        }
+      },
+      "end_date": {
+        "type": "Date",
+        "config": {
+          "label": "End Date",
+          "placeholder": ""
+        }
+      },
+      "techs_project": {
+        "type": "Group",
+        "config": {
+          "label": "Techs Project",
+          "repeat": true,
+          "fields": {
+            "tech": {
+              "type": "Text",
+              "config": {
+                "label": "tech",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "project_description": {
+        "type": "Group",
+        "config": {
+          "label": "project description",
+          "repeat": false,
+          "fields": {
+            "role": {
+              "type": "Text",
+              "config": {
+                "label": "role",
+                "placeholder": ""
+              }
+            },
+            "team": {
+              "type": "Text",
+              "config": {
+                "label": "team",
+                "placeholder": ""
+              }
+            },
+            "details": {
+              "type": "Text",
+              "config": {
+                "label": "details",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "links": {
+        "type": "Group",
+        "config": {
+          "label": "links",
+          "repeat": false,
+          "fields": {
+            "code": {
+              "type": "Text",
+              "config": {
+                "label": "code",
+                "placeholder": ""
+              }
+            },
+            "demo": {
+              "type": "Text",
+              "config": {
+                "label": "demo",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

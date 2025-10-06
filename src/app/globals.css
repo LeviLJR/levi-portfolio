@@ -1,1 +1,206 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.5rem;
+
+  --primary-color: #1c7ae7;
+  --secondary-color: #e64d0f;
+  --ternary-color: #6199d8;
+  --quaternary-color: #de6f42;
+  --quinary-color: #4e4563;
+
+  --surface-background: #dfdfdf;
+  --surface-primary: #ffffffb0;
+  --surface-secondary: linear-gradient(139deg, #ebb67d -34.48%, #8ec0fc 88.35%);
+  --surface-form: rgba(221, 221, 221, 0.84);
+  --surface-contact: #f3f3f3ad;
+  --surface-card: #ededed;
+
+  --text-primary: hsl(262, 37%, 10%);
+  --text-secondary: hsl(210, 2%, 22%);
+  --text-ternary: rgba(255, 255, 255, 1);
+
+  --background: var(--surface-background);
+  --foreground: var(--text-primary);
+  --card: var(--surface-card);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface-background);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--primary-color);
+  --primary-foreground: var(--surface-background);
+  --secondary: var(--secondary-color);
+  --secondary-foreground: var(--surface-background);
+
+  --muted: var(--surface-secondary);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--surface-primary);
+  --accent-foreground: var(--text-primary);
+  --form: var(--surface-form);
+  --form-foreground: var(--text-ternary);
+
+  --destructive: hsl(0, 100%, 50%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+
+  --border: var(--quinary-color);
+  --input: var(--surface-background);
+  --ring: var(--quaternary-color);
+}
+
+.dark {
+  --primary-color: #1c7ae7;
+  --secondary-color: #454b85;
+  --ternary-color: #8ec0fc;
+  --quaternary-color: #ebb67d;
+  --quinary-color: #cf3b24;
+
+  --surface-background: #222222;
+  --surface-primary: #36384bc0;
+  --surface-secondary: hsl(260, 15%, 27%);
+  --surface-form: rgba(224, 224, 231, 0.816);
+  --surface-contact: rgba(53, 47, 53, 0.832);
+  --surface-card: #383844;
+
+  --text-primary: #d0d0d0;
+  --text-secondary: hsl(0, 0%, 70%);
+  --form-foreground: #1a1a1a;
+
+  --background: var(--surface-background);
+  --foreground: var(--text-primary);
+  --card: var(--surface-card);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface-primary);
+  --popover-foreground: var(--text-primary);
+
+  --primary: var(--primary-color);
+  --primary-foreground: var(--text-primary);
+
+  --secondary: var(--secondary-color);
+  --secondary-foreground: var(--text-primary);
+
+  --muted: var(--surface-secondary);
+  --muted-foreground: var(--text-secondary);
+
+  --accent: var(--surface-primary);
+  --accent-foreground: var(--text-primary);
+
+  --destructive: hsl(0, 70%, 55%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+
+  --border: hsl(260, 10%, 40%);
+  --input: var(--surface-primary);
+  --ring: var(--primary-color);
+}
+
+@theme inline {
+  --animate-typing: typing 4s steps(20) infinite alternate, blink-caret .7s infinite;
+  /* --animate-typing: typing 4s steps(20, end) forwards, blink-caret 0.75s step-end infinite; */
+  /* Main colors*/
+  --color-primary-color: var(--primary-color);
+  --color-secondary-color: var(--secondary-color);
+  --color-ternary-color: var(--ternary-color);
+  --color-quaternary-color: var(--quaternary-color);
+  --color-quinary-color: var(--quinary-color);
+
+  /* Surfaces */
+  --color-surface-background: var(--surface-background);
+  --color-surface-primary: var(--surface-primary);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-surface-form: var(--surface-form);
+  --color-surface-contact: var(--surface-contact);
+  --color-surface-card: var(--surface-card);
+
+  /* Textos */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-foreground: var(--form-foreground);
+
+  /* Variáveis já usadas antes */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Extras */
+  --color-form: var(--form);
+  --color-contact: var(--surface-contact);
+
+  /* Charts */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sidebar */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --font-heading: var(--font-kalam);
+  --font-heebo: var(--font-heebo);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes cursor-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.01%, 100% {
+    opacity: 0;
+  }
+}
+
+@layer utilities {
+  .typing {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid white;
+    display: inline-block;
+    animation: typing 4s steps(20, end) forwards, cursor-blink 1.1s infinite step-start;
+  }
+}
