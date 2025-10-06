@@ -16,14 +16,9 @@ import { PrismicNextLink } from "@prismicio/next";
 import { ContactForm } from "../components/ContactForm";
 import TypingMotion from "../components/TypinMotion";
 
-export async function getDocument() {
+export default async function Home() {
   const client = createClient();
   const resume = (await client.getAllByUIDs("media", ["resume"])) ?? null;
-  return resume;
-}
-
-export default async function Home() {
-  const resume = await getDocument();
   return (
     <div id="home" className="scroll-mt-35">
       <section className="flex pt-4 pb-8 md:py-20 mt-20 m-auto items-center justify-center bg-[url('/watercolor-sky.png')] bg-origin-border bg-center bg-cover">
