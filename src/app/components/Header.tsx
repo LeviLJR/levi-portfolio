@@ -94,7 +94,7 @@ export default function Header() {
         <div className="absolute inset-0 h-screen backdrop-blur-sm bg-[rgba(0,0,0,0.2)] transition-opacity duration-300 ease-in-out z-[-1] md:invisible md:opacity-0"></div>
       )}
       <div
-       ref={panelRef}
+        ref={panelRef}
         className={`absolute md:relative md:items-center gap-10 md:gap-6 sm:flex shadow-md md:shadow-none md:top-0 md:m-0 md:p-0 md:w-auto md:flex-row ${menuOpen ? "bg-surface-card top-20 right-0 p-6 pt-12 md:pt-0 flex flex-col items-end w-[70%] px-10 h-screen" : "invisible md:visible"}`}
       >
         <nav className="flex flex-col md:flex-row gap-3 md:gap-6 text-text-primary text-right">
@@ -111,7 +111,10 @@ export default function Header() {
         <div className="border-b border-text-secondary opacity-35 w-full md:hidden"></div>
         <div className="flex gap-3 md:gap-6">
           <IconButton
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onClick={() => {
+              setTheme(theme === "dark" ? "light" : "dark");
+              setMenuOpen(false);
+            }}
             aria-label="Toggle theme"
           >
             <SunDimIcon className="size-6 absolute scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />

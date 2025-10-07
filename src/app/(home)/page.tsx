@@ -68,17 +68,17 @@ export default async function Home() {
       </section>
       <section
         id="about"
-        className="flex justify-center items-center px-6 py-8 pb-12  md:py-18 md:px-20 mx-auto my-15 w-[90dvw] rounded-xl bg-[linear-gradient(139deg,_#EBB67D_-34.48%,_#8EC0FC_88.35%)] sm:scroll-mt-20 md:scroll-mt-35"
+        className="flex justify-center items-center px-6 py-8 pb-12 md:py-18 md:px-20 mx-auto my-15 w-[90dvw] rounded-xl bg-[linear-gradient(139deg,_#EBB67D_-34.48%,_#8EC0FC_88.35%)] sm:scroll-mt-20 md:scroll-mt-35"
       >
-        <div className="flex flex-col md:flex-row justify-center items-center max-w-[987] gap-10">
+        <div className="flex flex-col md:flex-row justify-center items-center md:max-w-[987] lg:gap-10">
           <Image
             src={boyChair}
             draggable={false}
             alt="Boy sitting on a chair"
             className="md:object-contain max-w-[300] lg:max-w-[350]"
           />
-          <div className="space-y-8 max-w-[580] ">
-            <div className="space-x-6">
+          <div className="space-y-8 md:max-w-[580] ">
+            <div className="space-x-3 md:space-x-6">
               <i className="devicon-react-original text-primary-color dark:text-secondary text-4xl" />
               <i className="devicon-nextjs-plain text-primary-color dark:text-secondary text-4xl" />
               <i className="devicon-nodejs-plain text-primary-color dark:text-secondary text-4xl" />
@@ -111,7 +111,7 @@ export default async function Home() {
         </div>
       </section>
       <section className="relative flex flex-col justify-center items-center py-8 mx-auto my-15 lg:w-[95dvw] gap-10">
-        <Sparks height={64} className="absolute top-[60] left-[40]" />
+        <Sparks height={64} className="absolute top-[60] left-[2] md:left-[40]" />
         <Star height={64} className="absolute bottom-[-10] right-[5]" />
         <div>
           <h1 className="font-heading text-primary-color text-center dark:text-ternary-color">
