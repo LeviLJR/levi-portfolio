@@ -6,6 +6,8 @@ import { Kalam, Heebo } from "next/font/google";
 import type { Metadata } from "next";
 import { Toaster } from "@/components/ui/sonner";
 
+import { Analytics } from "@vercel/analytics/react";
+
 export const metadata: Metadata = {
   title: "Portfolio Levi",
   description: "Portfolio created with next, react, and typescript",
@@ -57,6 +59,7 @@ export default function RootLayout({
           <Toaster />
           <Footer />
         </ThemeProvider>
+        <Analytics /> 
       </body>
     </html>
   );
