@@ -15,7 +15,7 @@ export default function Footer() {
       </p>
       <div className="flex gap-4 md:gap-12 items-center mx-auto md:mx-0">
         <NavItem href="https://github.com/leviljr" label="GitHub" className="text-sm"/>
-        <NavItem href="https://github.com/leviljr" label="LinkedIn" className="text-sm"/>
+        <NavItem href="https://linkedin.com/in/leviljr" label="LinkedIn" className="text-sm"/>
         <IconButton onClick={scrollToTop} className="h-8 w-8 text-sm" >
           <ArrowUpIcon size={18} className="animate-accordion-up" />
         </IconButton>

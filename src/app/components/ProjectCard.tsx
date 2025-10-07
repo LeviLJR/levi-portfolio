@@ -9,7 +9,7 @@ import { formatProjectDates } from "@/lib/utils";
 import { IconButton } from "./IconButton";
 import { ArrowUpRightIcon, GithubLogoIcon } from "@phosphor-icons/react";
 
-export function ProjectCard({ projectName, className }: { projectName: string, className?: string }) {
+export function ProjectCard({ projectName }: { projectName: string, className?: string }) {
   const [project, setProject] = useState<CardProjectDocument | null>(null);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export function ProjectCard({ projectName, className }: { projectName: string, c
 
   return (
     <Link href={`/projects/${uid}`}>
-      <div className={`relative bg-surface-card cursor-pointer rounded-xl p-6 max-w-[384px] hover:border hover:border-primary-color hover:shadow-[0_0_48px_0_rgba(40,138,255,0.4)] h-full group ${className}`}>
+      <div className={`relative bg-surface-card cursor-pointer rounded-xl p-6 md:max-w-[384px] hover:border hover:border-primary-color hover:shadow-[0_0_48px_0_rgba(40,138,255,0.4)] h-full group max-w-full`}>
         <PrismicNextImage
           field={imageField}
           imgixParams={{ auto: ["format", "compress"], fit: "max", q: 75 }}

@@ -79,7 +79,7 @@ export default function Projects() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 py-4 w-full">
           {projectsList.map((projects) => (
             <div key={projects.id}>
-              <ProjectCard projectName={projects.uid} className='max-w-full'/>
+              <ProjectCard projectName={projects.uid}/>
             </div>
           ))}
         </div>

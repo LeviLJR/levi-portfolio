@@ -5,7 +5,7 @@ import { MoonStarsIcon, SunDimIcon } from "@phosphor-icons/react";
 import { NavItem } from "./NavItem";
 import { IconButton } from "./IconButton";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 
 export default function Header() {
@@ -16,15 +16,31 @@ export default function Header() {
     { href: "/#contact", label: "Contact" },
   ];
 
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const panelRef = useRef<HTMLDivElement | null>(null);
+
   const { theme, setTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    if (menuOpen) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
+    function onClickOutside(e: MouseEvent) {
+      if (
+        panelRef.current &&
+        !panelRef.current.contains(e.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(e.target as Node)
+      ) {
+        setMenuOpen(false);
+      }
     }
+    if (menuOpen) {
+      document.addEventListener("mousedown", onClickOutside);
+      document.body.classList.add("overflow-hidden");
+    }
+    return () => {
+      document.removeEventListener("mousedown", onClickOutside);
+      document.body.classList.remove("overflow-hidden");
+    };
   }, [menuOpen]);
 
   return (
@@ -38,6 +54,7 @@ export default function Header() {
           />
         </Link>
         <IconButton
+          ref={buttonRef}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation"
           className="bg-transparent dark:bg-transparent md:hidden"
@@ -77,6 +94,7 @@ export default function Header() {
         <div className="absolute inset-0 h-screen backdrop-blur-sm bg-[rgba(0,0,0,0.2)] transition-opacity duration-300 ease-in-out z-[-1] md:invisible md:opacity-0"></div>
       )}
       <div
+       ref={panelRef}
         className={`absolute md:relative md:items-center gap-10 md:gap-6 sm:flex shadow-md md:shadow-none md:top-0 md:m-0 md:p-0 md:w-auto md:flex-row ${menuOpen ? "bg-surface-card top-20 right-0 p-6 pt-12 md:pt-0 flex flex-col items-end w-[70%] px-10 h-screen" : "invisible md:visible"}`}
       >
         <nav className="flex flex-col md:flex-row gap-3 md:gap-6 text-text-primary text-right">
@@ -86,6 +104,7 @@ export default function Header() {
               href={href}
               label={label}
               className="ml-auto md:mx-auto"
+              onClick={() => setMenuOpen(false)}
             />
           ))}
         </nav>

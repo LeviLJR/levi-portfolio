@@ -57,7 +57,7 @@ export default function Project() {
           field={imageField}
           imgixParams={{ auto: ["format", "compress"], fit: "max", q: 75 }}
           priority
-          className="rounded-t-xl bg-gradient-to-r from-[#6690EC] to-[#9CEEDE]"
+          className="md:rounded-t-xl bg-gradient-to-r from-[#6690EC] to-[#9CEEDE]"
         />
         <div className="p-8 px-10 gap-6 flex flex-col">
           <div className="flex justify-between ">

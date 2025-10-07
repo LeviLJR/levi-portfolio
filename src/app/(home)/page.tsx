@@ -20,7 +20,7 @@ export default async function Home() {
   const client = createClient();
   const resume = (await client.getAllByUIDs("media", ["resume"])) ?? null;
   return (
-    <div id="home" className="scroll-mt-35">
+    <div id="start" className="sm:scroll-mt-35">
       <section className="flex pt-4 pb-8 md:py-20 mt-20 m-auto items-center justify-center bg-[url('/watercolor-sky.png')] bg-origin-border bg-center bg-cover">
         <div className="flex flex-col-reverse md:flex-row bg-surface-primary backdrop-blur-md rounded-xl shadow-lg w-[90dvw] lg:w-[80dvw] max-w-[1023] px-6 py-8 md:px-12 md:py-15 lg:px-15 lg:py-17.5 bg-contain gap-8 md:gap-16 h-auto justify-between ">
           <div className="flex flex-col gap-8 justify-center md:max-w-[520]">
@@ -68,9 +68,9 @@ export default async function Home() {
       </section>
       <section
         id="about"
-        className="flex justify-center items-center px-6 py-8 pb-12  md:py-18 md:px-20 mx-auto my-15 w-[95dvw] rounded-xl bg-[linear-gradient(139deg,_#EBB67D_-34.48%,_#8EC0FC_88.35%)] scroll-mt-20 md:scroll-mt-35"
+        className="flex justify-center items-center px-6 py-8 pb-12  md:py-18 md:px-20 mx-auto my-15 w-[90dvw] rounded-xl bg-[linear-gradient(139deg,_#EBB67D_-34.48%,_#8EC0FC_88.35%)] sm:scroll-mt-20 md:scroll-mt-35"
       >
-        <div className="flex flex-col md:flex-row justify-center items-center  max-w-[987] gap-10">
+        <div className="flex flex-col md:flex-row justify-center items-center max-w-[987] gap-10">
           <Image
             src={boyChair}
             draggable={false}
@@ -119,7 +119,7 @@ export default async function Home() {
           </h1>
           <h2>Take a look at my highlighted projects</h2>
         </div>
-        <div className="flex flex-col md:flex-row flex-wrap gap-8 justify-center py-4 px-12 md:p-0">
+        <div className="flex flex-col md:flex-row flex-wrap gap-8 justify-center py-4 px-6 md:p-0">
           <ProjectCard projectName="youbloom" />
           <ProjectCard projectName="fokus" />
           <ProjectCard projectName="utask" />
@@ -134,7 +134,7 @@ export default async function Home() {
       </section>
       <section
         id="contact"
-        className="bg-linear-[145deg,#DE6F42_-27.41%,#595E96_90.24%] py-8 md:py-18 justify-center flex scroll-mt-20"
+        className="bg-linear-[145deg,#DE6F42_-27.41%,#595E96_90.24%] py-8 md:py-18 justify-center flex scroll-mt-10 md:scroll-mt-20"
       >
         <div className="bg-contact rounded-xl flex flex-col md:flex-row justify-between space-x-10 py-10 w-[90dvw] max-w-[1200] px-6 md:px-12 lg:px-20 xl:px-30 md:gap-0">
           <div className="md:max-w-[440] w-full">
