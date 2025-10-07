@@ -92,43 +92,98 @@ export default function Header() {
       </div>
       <AnimatePresence>
         {menuOpen && (
-          <motion.div className="absolute inset-0 h-screen backdrop-blur-sm bg-[rgba(0,0,0,0.2)] transition-opacity duration-300 ease-in-out z-[-1] md:invisible md:opacity-0" />
-        )}
-        <motion.div
-          key="panel"
-          ref={panelRef}
-          initial={{ x: "100%" }}
-          animate={{ x: 0 }}
-          exit={{ x: "100%" }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          className={`absolute md:relative md:items-center gap-10 md:gap-6 sm:flex shadow-md md:shadow-none md:top-0 md:m-0 md:p-0 md:w-auto md:flex-row ${menuOpen ? "bg-surface-card md:bg-transparent top-20 right-0 p-6 pt-12 md:pt-0 flex flex-col items-end w-[70%] px-10 h-screen" : "invisible md:visible"}`}
-        >
-          <nav className="flex flex-col md:flex-row gap-3 md:gap-6 text-text-primary text-right">
-            {navItems.map(({ href, label }) => (
-              <NavItem
-                key={href}
-                href={href}
-                label={label}
-                className="ml-auto md:mx-auto"
-                onClick={() => setMenuOpen(false)}
-              />
-            ))}
-          </nav>
-          <div className="border-b border-text-secondary opacity-35 w-full md:hidden"></div>
-          <div className="flex gap-3 md:gap-6 ">
-            <IconButton
-              onClick={() => {
-                setMenuOpen(false);
-                setTheme(theme === "light" ? "dark" : "light");
-              }}
-              aria-label="Toggle theme"
+          <>
+            <motion.div
+              key="overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="absolute inset-0 h-screen backdrop-blur-sm bg-[rgba(0,0,0,0.2)] transition-opacity duration-300 ease-in-out z-[-1] md:invisible md:opacity-0"
+              onClick={() => setMenuOpen(false)}
+            />
+
+            <motion.div
+              key="panel"
+              ref={panelRef}
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="fixed top-20 right-0 p-6 pt-12 flex flex-col items-end w-[70%] h-screen bg-surface-card shadow-md gap-10 md:hidden z-[45]"
             >
-              <MoonStarsIcon className="size-6 absolute scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-              <SunDimIcon className="size-6 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-            </IconButton>
-          </div>
-        </motion.div>
+              <nav className="flex flex-col md:flex-row gap-3 md:gap-6 text-text-primary text-right">
+                {navItems.map(({ href, label }) => (
+                  <NavItem
+                    key={href}
+                    href={href}
+                    label={label}
+                    className="ml-auto md:mx-auto"
+                    onClick={() => setMenuOpen(false)}
+                  />
+                ))}
+              </nav>
+              <div className="border-b border-text-secondary opacity-35 w-full md:hidden"></div>
+              <div className="flex gap-3 md:gap-6 ">
+                <IconButton
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setTheme(theme === "light" ? "dark" : "light");
+                  }}
+                  aria-label="Toggle theme"
+                >
+                  <MoonStarsIcon className="size-6 absolute scale-100 dark:scale-0" />
+                  <SunDimIcon className="size-6 scale-0 dark:scale-100" />
+                </IconButton>
+              </div>
+            </motion.div>
+          </>
+        )}
       </AnimatePresence>
+      <div className="hidden md:flex items-center gap-6">
+        <nav className="flex gap-6 text-text-primary">
+          {navItems.map(({ href, label }) => (
+            <NavItem key={href} href={href} label={label} />
+          ))}
+        </nav>
+        <IconButton
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          aria-label="Toggle theme"
+          className="relative"
+        >
+          <motion.div
+            key="moon"
+            initial={{ rotate: 0, scale: 1, opacity: 1 }}
+            animate={
+              theme === "dark"
+                ? { rotate: 0, scale: 1, opacity: 1 }
+                : { rotate: 90, scale: 0, opacity: 0 }
+            }
+            transition={{
+              duration: 0.4,
+              ease: [0.68, -0.55, 0.27, 1.55],
+            }}
+            className="absolute"
+          >
+            <MoonStarsIcon className="size-6" />
+          </motion.div>
+          <motion.div
+            key="sun"
+            initial={{ rotate: -90, scale: 0, opacity: 0 }}
+            animate={
+              theme === "light"
+                ? { rotate: 0, scale: 1, opacity: 1 }
+                : { rotate: -90, scale: 0, opacity: 0 }
+            }
+            transition={{
+              duration: 0.4,
+              ease: [0.68, -0.55, 0.27, 1.55],
+            }}
+          >
+            <SunDimIcon className="size-6 text-text-foreground" />
+          </motion.div>
+        </IconButton>
+      </div>
     </header>
   );
 }
