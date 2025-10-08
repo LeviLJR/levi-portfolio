@@ -24,7 +24,7 @@ export default async function Home() {
       <section className="flex pt-4 pb-8 md:py-20 mt-20 m-auto items-center justify-center bg-[url('/watercolor-sky.png')] bg-origin-border bg-center bg-cover">
         <div className="flex flex-col-reverse md:flex-row bg-surface-primary backdrop-blur-md rounded-xl shadow-lg w-[90dvw] lg:w-[80dvw] max-w-[1023] px-6 py-8 md:px-12 md:py-15 lg:px-15 lg:py-17.5 bg-contain gap-8 md:gap-16 h-auto justify-between ">
           <div className="flex flex-col gap-8 justify-center md:max-w-[520]">
-            <TypingMotion/>
+            <TypingMotion />
             <h2 className="font-medium text-2xl">
               Full-stack developer and innovation enthusiast
             </h2>
@@ -97,10 +97,10 @@ export default async function Home() {
               <p className="text-text-secondary dark:text-contact">
                 Beyond coding, I&apos;m a coffee enthusiast, a dog lover, and a
                 self-taught pianist and artist who enjoys spending my free time
-                doodling and playing songs. I am currently seeking
-                opportunities to bring my skills and enthusiasm to a tech
-                company in the United States or Europe and am excited about the
-                prospect of relocating to pursue new challenges.
+                doodling and playing songs. I am currently seeking opportunities
+                to bring my skills and enthusiasm to a tech company in the
+                United States or Europe and am excited about the prospect of
+                relocating to pursue new challenges.
               </p>
             </div>
             <Button className="bg-primary-color dark:bg-secondary-color dark:text-text-primary mr-auto">
@@ -111,7 +111,10 @@ export default async function Home() {
         </div>
       </section>
       <section className="relative flex flex-col justify-center items-center py-8 mx-auto my-15 lg:w-[95dvw] gap-10">
-        <Sparks height={64} className="absolute top-[60] left-[2] md:left-[40]" />
+        <Sparks
+          height={64}
+          className="absolute top-[60] left-[2] md:left-[40]"
+        />
         <Star height={64} className="absolute bottom-[-10] right-[5]" />
         <div>
           <h1 className="font-heading text-primary-color text-center dark:text-ternary-color">
@@ -143,8 +146,12 @@ export default async function Home() {
               Enjoyed my work? Let’s work together
             </h2>
             <p className="text-text-secondary mt-4">
-              I’m always up for a chat. Pop me an email at
-              leviliberman.dev@gmail.com or give me a shout on social media.
+              I’m always up for a chat. Pop me an email at {" "}
+              <a href="mailto:leviliberman.dev@gmail.com" className="font-bold text-primary-color hover:underline">
+                leviliberman.dev@gmail.com
+              </a>
+               {" "}
+              or give me a shout on social media.
             </p>
             <div className="flex gap-4 mt-4">
               <a
