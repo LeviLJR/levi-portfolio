@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Levi Liberman — Developer Portfolio
 
-## Getting Started
+A modern, responsive, and fully deployed portfolio website built with **Next.js** and **TypeScript**.  
+It showcases my **projects**, **skills**, and **contact information**, featuring smooth animations and CMS-driven content.
 
-First, run the development server:
+🌐 **Live Site:** [https://levi-liberman-portfolio.vercel.app/](https://levi-liberman-portfolio.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This portfolio represents my work as a **Full Stack Developer**, highlighting both my technical expertise and design sense.  
+It’s built to be fast, scalable, and easy to update through a headless CMS.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Dynamic project showcase with Next.js routing  
+- Custom-built UI components (Button, ProjectCard, ContactForm, etc.)  
+- **Prismic CMS** integration for easy content updates  
+- Responsive layout with smooth **Framer Motion** animations  
+- Validated contact form  
+- Theming and clean, modern design  
+- Code linting and formatting with ESLint + Prettier  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠️ Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Frontend:**  
+- [Next.js](https://nextjs.org/)  
+- [React](https://react.dev/)  
+- [TypeScript](https://www.typescriptlang.org/)  
+- [Tailwind CSS](https://tailwindcss.com/)  
+- [Framer Motion](https://www.framer.com/motion/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Content Management:**  
+- [Prismic CMS](https://prismic.io/)
+
+**Code Quality:**  
+- ESLint & Prettier  
+
+---
+
+## Project Structure
+
+- `app/` – Main app pages and layout
+- `components/` – Reusable UI components
+- `src/projects/` – Project pages
+- `public/` – Static assets
+- `customtypes/` – Prismic custom types
+
+## Deployment
+
+The site is live and hosted on **Vercel**:  
+👉 [https://levi-liberman-portfolio.vercel.app/](https://levi-liberman-portfolio.vercel.app/)
+
+This repository is for showcasing code and structure — no local setup is required.
+
